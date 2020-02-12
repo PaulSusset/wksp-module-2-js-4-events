@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <style>
+            .initial{
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .start{
+                width: 40%;
+                padding: 50px;
+                background: grey;
+                color: white;
+                position: absolute;
+            }
+            #container{
+                height: 100vh;
+                width: 100vw;
+                position: relative;
+                background: lightcyan;
+                visibility: hidden;
+            }
+            .base{
+                height: 60px;
+                width: 60px;
+                border-radius: 50%;
+                background: red;
+                color: white;
+            }
+            .green{
+                background: green;
+            }
+            #countdown{
+                height: 100%;
+                width: 100%;
+                font-size: 6rem;
+                text-align: center;
+                color: lightslategray;
+            }
+            </style>
+            <audio id='FF7' src="./final-fantasy-vii-victory-fanfare-1.mp3"></audio>
+            <audio id="guile" src="./Guile Theme.mp3"></audio>
+    </head>
+    <body class='initial'>
+        <button class="start" id="start">Click me!</button>
+        <div id="container">
+            <p id="countdown">
+                <span id="seconds">00</span> :
+                <span id="millisec">00</span>
+            </p>
+        </div>
+    </body>
+    <script src="app.js"></script>
+</html>

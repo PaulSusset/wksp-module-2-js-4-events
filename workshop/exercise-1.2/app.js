@@ -15,3 +15,30 @@
 
 // Challenge
 // Make the countdown live...
+
+const myBod = document.querySelector('body');
+let win = false;
+const myP = document.querySelector('#result');
+const timer = Math.floor((Math.random() * 5) +1)
+let timeLeft = document.querySelector('#time');
+timeLeft.innerText = timer;
+
+const myTimer = setInterval(function(){
+    if (!win && timeLeft.innerText > 0) {
+        timeLeft.innerText--;
+        
+    } else if (timeLeft.innerText <= 0 ) {
+        clearInterval(myTimer);
+        myBod.removeEventListener('click', clicky);
+        myP.innerText = 'You lose!'
+    }
+}, 1000)
+
+function clicky(){
+    win = true;
+    myBod.removeEventListener('click', clicky);
+    myP.innerText = 'You win!';
+    clearInterval(myTimer);
+}
+
+myBod.addEventListener('click', clicky);

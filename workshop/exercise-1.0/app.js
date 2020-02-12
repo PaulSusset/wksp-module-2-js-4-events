@@ -9,3 +9,14 @@
 // OPTIONAL
 // Feel free to add some CSS to this once you're done
 // --------------------------------------------------
+const main = document.getElementById('main');
+const para = document.createElement('p');
+main.appendChild(para)
+
+function paraShow(event) {
+    para.innerText = 'CONGRATULATIONS!!';
+    body.removeEventListener('click', paraShow);
+    console.log('clicked');
+}
+main.addEventListener('click', paraShow);
+

@@ -38,8 +38,8 @@ Open the door, when someone is there.
 
 These events fire when the HTML elements you can interact with gain/ lose focus.
 
-- `focus`
-- `blur`
+- `focus` when you click on an element and it highlights
+- `blur` when you click away from a focused element
 - `focusin` (_new; not supported by Firefox_)
 - `focusout` (_new; same as blur; not supported by Firefox_)
 
@@ -49,36 +49,36 @@ These events fire when the HTML elements you can interact with gain/ lose focus.
 
 - `click`
 - `dblclick`
-- `mousedown`
-- `mouseup`
+- `mousedown` hold down
+- `mouseup` let go
 - `mouseover`
-- `mouseout`
-- `mousemove`
+- `mouseout` move outside an element
+- `mousemove` any time the mouse moves
 
 ---
 
 ##### Keyboard Events
 
 - `input`
-- `keydown`
+- `keydown` - when a key is pressed down, will trigger multiple times on hold
 - `keypress`
-- `keyup`
+- `keyup` - key release
 
 ---
 
 ### Form Events
 
-- `submit`
-- `change`
+- `submit` - type submit button
+- `change` changing a form after original submission. example: re-validating during typing after failed input
 - `input`
 
 ---
 
 ### HTML5 Events
 
-- `DOMContentLoaded`
+- `DOMContentLoaded` - when element or page is loaded
 - `hashchange`
-- `beforeunload`
+- `beforeunload` - only use when useful to user. Save document/email. finish transaction etc.
 
 ---
 
@@ -99,7 +99,14 @@ All DOM nodes have methods we can use to _notify_ us of an event.
 
 ```js
 // Example
-
+const button = document.querySelector('#btn');
+function porque = function(){
+    console.log('why?');
+}
+// Add it
+button.addEventListener('click', porque);
+// Remove it
+button.removeEventListener('click', porque);
 ```
 
 ---
@@ -165,6 +172,8 @@ Handlers registered on nodes with children will also receive events that happen 
 <img src='./assets/propagation_bubbling.png' />
 
 [Source](https://www.sitepoint.com/event-bubbling-javascript/)
+
+Events go to most specific target (child), then trigger parent events while bubbling
 
 ---
 
