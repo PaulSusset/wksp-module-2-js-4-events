@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <audio src="./sounds/bg.mp3"></audio>
+        <audio id='ping' src="./sounds/signal.mp3"></audio>
+        <audio id="winSound" src="./sounds/win.mp3"></audio>
+        <audio id="loseSound" src="./sounds/lose.mp3"></audio>
+        <audio id="audio" src="./sounds/bg.mp3"></audio>
+    </head>
+    <body>
+        <div class="menu" id="menu">
+            <div class="button textStyle hover" id="start">Start Game</div>
+            <div class="button textStyle hover" id="inst">Instructions</div>
+        </div>
+        <div class="instructions textStyle" id='instructions'>
+            <p >
+                Two players wait for a signal to start after a random delay. 
+                Once the start signal, first person to press their key wins. 
+                If a player presses before the signal appears, they lose. 
+                Player one presses the q key and player 2 presses the p key
+                
+            </p>
+            <div class="hover exit" id="exit">x</div>
+    </div>
+        <div id="game" class="game">
+            <div id="scoreboard" class="scoreboard">
+                <div id="kirbyScore" class="scoresheet"></div>
+                <div id="sonicScore" class="scoresheet"></div>
+            </div>
+            <div id="pingSpot" class="pingSpot"><img class="pingSpot" src="./imgs/signal.png" alt="exclamation marks"></div>
+            <div id="level" class="level">
+                <div id="kirby" class="sprites"><img class="sprites" src="./imgs/p1.gif" alt="kirby idling"></div>
+                <div id="ring" class="sprites"><img class="sprites" src="./imgs/prize.gif" alt="spinning ring"></div>
+                <div id="sonic" class="sprites"><img class="sprites" src="./imgs/p2.gif" alt="sonic idling"></div>
+            </div>
+        </div>
+        <div class='victory' id="victory">
+            <div id="victoryText" class='victoryText textStyle'></div>
+            <div class='textStyle reset hover' id="reset">Reset</div>
+        </div>
+    </body>
+    <script src="app.js"></script>
+    </html>
